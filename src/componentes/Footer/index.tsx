@@ -2,10 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 
 const FooterContainer = styled.footer`
-  background-color: #none;
+  background-color: none;
   padding: 20px;
   text-align: center;
-  border-top: 1px solid #eaeaea;
+  color: #white;
+ 
 `;
 
 const Link = styled.a`
