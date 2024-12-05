@@ -41,7 +41,7 @@ const App: React.FC = () => {
   };
 
   const fetchData = () => {
-    fetch('http://localhost:5173/api/gamesData.json')
+    fetch('https://common-rep.vercel.app/api/gamesData.json')
       .then(res => res.json())
       .then(data => {
         setGames(data);
