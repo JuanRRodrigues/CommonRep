@@ -635,7 +635,7 @@ const Imagem: React.FC<ImagemProps> = ({ foto, aoZoomSolicitado, aoAlternarFavor
                 {fotosOrdenadas.map((item) => (
                     <Card key={item.id}>
                         <Image
-                            src={`../../../../public/imagens/galeria/foto-5.png`}
+                            src={`https://raw.githubusercontent.com/JuanRRodrigues/CommonRep/refs/heads/main/public/imagens/galeria/foto-3.png`}
                             alt=""
                             onClick={() => toggleModal(item)} // Passa o item para o modal
                         />
