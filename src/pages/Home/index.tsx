@@ -39,9 +39,15 @@ const App: React.FC = () => {
   const [active, setActive] = useState(false);
   const [games, setGames] = useState<Game[]>([]);
 
+<<<<<<< HEAD
   // Estado para controlar a abertura dos modais
   const [isTermsModalOpen, setIsTermsModalOpen] = useState(false);
   const [isPrivacyPolicyModalOpen, setIsPrivacyPolicyModalOpen] = useState(false);
+=======
+    // Estado para controlar a abertura dos modais
+    const [isTermsModalOpen, setIsTermsModalOpen] = useState(false);
+    const [isPrivacyPolicyModalOpen, setIsPrivacyPolicyModalOpen] = useState(false);
+>>>>>>> de490e146856c4edfa15caf5e3c6c2c46bddcd96
 
   const handleTogleActive = () => {
     setActive(!active);
@@ -90,6 +96,14 @@ const App: React.FC = () => {
     closePrivacyPolicyModal();
   };
 
+    // Funções para abrir e fechar os modais
+    const openTermsModal = () => setIsTermsModalOpen(true);
+    const closeTermsModal = () => setIsTermsModalOpen(false);
+  
+    const openPrivacyPolicyModal = () => setIsPrivacyPolicyModalOpen(true);
+    const closePrivacyPolicyModal = () => setIsPrivacyPolicyModalOpen(false);
+
+
   return (
     <Components.Main>
       <Backgroundgradient>
@@ -98,13 +112,18 @@ const App: React.FC = () => {
         <Components.Banner className={`banner ${active ? 'active' : ''}`}>
           <Header toggleActive={handleTogleActive} />
           <Home games={games} />
+<<<<<<< HEAD
           <Card />
+=======
+          <Card/>
+>>>>>>> de490e146856c4edfa15caf5e3c6c2c46bddcd96
           <Footer 
             openTermsModal={openTermsModal} 
             openPrivacyPolicyModal={openPrivacyPolicyModal} 
           />
           
           {/* Exibindo os modais */}
+<<<<<<< HEAD
           <TermsModal 
             isOpen={isTermsModalOpen} 
             onClose={closeTermsModal} 
@@ -115,6 +134,10 @@ const App: React.FC = () => {
             onClose={closePrivacyPolicyModal} 
             onAccept={handleAcceptPrivacyPolicy}  // Passa a função para aceitar a política
           />
+=======
+          <TermsModal isOpen={isTermsModalOpen} onClose={closeTermsModal} />
+          <PrivacyPolicyModal isOpen={isPrivacyPolicyModalOpen} onClose={closePrivacyPolicyModal} />
+>>>>>>> de490e146856c4edfa15caf5e3c6c2c46bddcd96
         </Components.Banner>
       </Backgroundgradient>
     </Components.Main>

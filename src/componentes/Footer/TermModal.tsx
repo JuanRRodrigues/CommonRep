@@ -1,13 +1,21 @@
 import React, { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
+<<<<<<< HEAD
 import { useTranslation } from 'react-i18next';
+=======
+
+>>>>>>> de490e146856c4edfa15caf5e3c6c2c46bddcd96
 
 interface TermModalProps {
   isOpen: boolean;
   onClose: () => void;
+<<<<<<< HEAD
   onAccept: () => void;
 }
 
+=======
+}
+>>>>>>> de490e146856c4edfa15caf5e3c6c2c46bddcd96
 // Estilos do Footer (Rodapé)
 const Footer = styled.footer`
   background-color: #f8f8f8;
@@ -63,8 +71,12 @@ const ModalHeader = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
+<<<<<<< HEAD
 
   background-color: #fff;
+=======
+  border-bottom: 1px solid #ddd;
+>>>>>>> de490e146856c4edfa15caf5e3c6c2c46bddcd96
   padding-bottom: 16px;
   margin-bottom: 16px;
 `;
@@ -74,7 +86,10 @@ const ModalTitle = styled.h1`
   font-size: 1.5rem;
   font-weight: bold;
   margin: 0;
+<<<<<<< HEAD
  
+=======
+>>>>>>> de490e146856c4edfa15caf5e3c6c2c46bddcd96
 `;
 
 // Botão de fechar
@@ -122,10 +137,17 @@ const Button = styled.button<{ isPrimary: boolean; disabled: boolean }>`
   }
 `;
 
+<<<<<<< HEAD
 const TermsModal: React.FC<TermModalProps> = ({ isOpen, onClose, onAccept}) => {
   const [canAccept, setCanAccept] = useState(false); // Controla se o botão de aceitar será liberado
   const contentRef = useRef<HTMLDivElement | null>(null); // Referência para o conteúdo dos termos
   const { t, i18n } = useTranslation();
+=======
+const TermsModal: React.FC<TermModalProps> = ({ isOpen, onClose}) => {
+  const [canAccept, setCanAccept] = useState(false); // Controla se o botão de aceitar será liberado
+  const contentRef = useRef<HTMLDivElement | null>(null); // Referência para o conteúdo dos termos
+
+>>>>>>> de490e146856c4edfa15caf5e3c6c2c46bddcd96
 
   // Função para verificar se o usuário chegou ao fim do conteúdo
   const handleScroll = () => {
@@ -142,12 +164,16 @@ const TermsModal: React.FC<TermModalProps> = ({ isOpen, onClose, onAccept}) => {
 
   // UseEffect para garantir que o scroll inicie no topo quando o modal abrir
   useEffect(() => {
+<<<<<<< HEAD
     
+=======
+>>>>>>> de490e146856c4edfa15caf5e3c6c2c46bddcd96
     if (isOpen && contentRef.current) {
       contentRef.current.scrollTop = 0; // Faz o scroll começar do topo
     }
   }, [isOpen]);
 
+<<<<<<< HEAD
 
   // Verifica se os termos de uso já foram aceitos
 useEffect(() => {
@@ -163,12 +189,15 @@ const handleAcceptTerms = () => {
   onAccept(); // Chama a função onAccept do componente pai para fechar o modal
 };
 
+=======
+>>>>>>> de490e146856c4edfa15caf5e3c6c2c46bddcd96
   return (
     <div>
       {/* Modal */}
       <Modal isOpen={isOpen}>
         <ModalContainer>
           <ModalHeader>
+<<<<<<< HEAD
             <ModalTitle>{t("Terms and Conditions")}</ModalTitle>
           
           </ModalHeader>
@@ -196,6 +225,39 @@ const handleAcceptTerms = () => {
             <p>4.2. Under this license, you may not:</p>
             <ul>
               <li>Modify or copy the materials;</li>
+=======
+            <ModalTitle>Termos e Condições</ModalTitle>
+            <CloseButton onClick={onClose}>X</CloseButton>
+              <span>X</span>
+          </ModalHeader>
+          <ModalBody ref={contentRef} onScroll={handleScroll}>
+            <h2>TERMOS E CONDIÇÕES GERAIS DE USO DA PLATAFORMA COMMONLEAGUE</h2>
+            <p><strong>Última atualização: 15 de Outubro de 2024</strong></p>
+            <p>
+              Bem-vindo(a) à plataforma CommonLeague. Ao acessar e utilizar este site, você
+              concorda em estar vinculado a estes Termos e Condições Gerais de Uso, que regulam
+              o uso da plataforma de torneios de jogos online. Leia atentamente as disposições
+              abaixo, uma vez que seu uso implica aceitação integral dos termos aqui descritos.
+            </p>
+
+            <h3>1. Definições</h3>
+            <p>1.1. Plataforma: Refere-se ao site CommonLeague, que organiza torneios de jogos online para seus usuários.</p>
+            <p>1.2. Usuário: Pessoa física que acessa ou utiliza a plataforma, seja para competir em torneios ou interagir com outros recursos disponibilizados.</p>
+            <p>1.3. Torneios: Competições organizadas através da plataforma envolvendo jogos eletrônicos, nos quais os usuários participam de acordo com regras específicas de cada competição.</p>
+
+            <h3>2. Aceitação dos Termos</h3>
+            <p>2.1. O uso da CommonLeague implica a aceitação destes Termos e Condições Gerais de Uso, sendo responsável pelo cumprimento de todas as leis e regulamentos locais aplicáveis. Se você não concordar com algum desses termos, está proibido de usar ou acessar este site. Os materiais contidos neste site são protegidos pelas leis de direitos autorais e marcas comerciais aplicáveis.</p>
+
+            <h3>3. Condições de Uso</h3>
+            <p>3.1. O uso da CommonLeague é restrito a maiores de 18 anos.</p>
+            <p>3.2. A CommonLeague concede uma licença, não exclusiva e intransferível para o uso da plataforma, exclusivamente para fins de entretenimento, sujeita às condições estabelecidas nestes Termos.</p>
+
+            <h3>4. Uso de Licença</h3>
+            <p>4.1. É concedida permissão temporária para baixar materiais (Informações ou Software) da plataforma CommonLeague, exclusivamente para visualização pessoal e não comercial. Essa licença não confere ao usuário quaisquer direitos sobre o conteúdo além do uso permitido.</p>
+            <p>4.2. Sob esta licença, você não poderá:</p>
+            <ul>
+              <li>Modificar ou copiar os materiais;</li>
+>>>>>>> de490e146856c4edfa15caf5e3c6c2c46bddcd96
               <li>Usar os materiais para fins comerciais ou exibição pública (comercial ou não comercial);</li>
               <li>Tentar descompilar, reverter ou realizar engenharia reversa de qualquer software da plataforma;</li>
               <li>Remover direitos autorais ou outras notificações de propriedade dos materiais;</li>
@@ -238,8 +300,15 @@ const handleAcceptTerms = () => {
             <p>Contato: Em caso de dúvidas ou solicitações, entre em contato com nosso suporte pelo e-mail integradoifspprojeto@gmail.com.</p>
           </ModalBody>
           <ModalFooter>
+<<<<<<< HEAD
           
           <Button isPrimary={true} onClick={handleAcceptTerms} disabled={!canAccept}>
+=======
+            <Button isPrimary={false} onClick={onClose} disabled={false}>
+              Decline
+            </Button>
+            <Button isPrimary={true} onClick={onClose} disabled={!canAccept}>
+>>>>>>> de490e146856c4edfa15caf5e3c6c2c46bddcd96
               Accept
             </Button>
           </ModalFooter>

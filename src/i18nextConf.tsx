@@ -5,7 +5,10 @@ import { languageDetector, languageDetectorOptions } from "./lang-detector";
 const resources = {
     en: {
         translation: {
+<<<<<<< HEAD
 
+=======
+>>>>>>> de490e146856c4edfa15caf5e3c6c2c46bddcd96
             "Last updated: 15th October 2024": "Last updated: 15th October 2024",
 
             "Sign In": "Sign In",
@@ -85,11 +88,17 @@ const resources = {
 
             "7. Contact": "7. Contact",
             "If you have any questions about our Privacy Policy, contact us at the email: integradoifspprojeto@gmail.com":
+<<<<<<< HEAD
                 "If you have any questions about our Privacy Policy, contact us at the email: integradoifspprojeto@gmail.com",
 
                "Login failed. Please check your credentials and try again." :  "Login failed. Please check your credentials and try again."
     }
 },
+=======
+                "If you have any questions about our Privacy Policy, contact us at the email: integradoifspprojeto@gmail.com"
+        }
+    },
+>>>>>>> de490e146856c4edfa15caf5e3c6c2c46bddcd96
     pt: {
         translation: {
             "Last updated: 15th October 2024": "Última atualização: 15 de Outubro de 2024",
@@ -164,9 +173,13 @@ const resources = {
               "A CommonLeague se reserva o direito de modificar esta Política de Privacidade a qualquer momento. As alterações serão publicadas nesta página com a data de revisão atualizada.",
             "7. Contact": "7. Contato",
             "If you have any questions about our Privacy Policy, please contact us via email: integradoifspprojeto@gmail.com":
+<<<<<<< HEAD
               "Se você tiver dúvidas sobre nossa Política de Privacidade, entre em contato conosco pelo e-mail: integradoifspprojeto@gmail.com",
 
                 "Login failed. Please check your credentials and try again." :  "Por favor, verifique suas credenciais e tente novamente."
+=======
+              "Se você tiver dúvidas sobre nossa Política de Privacidade, entre em contato conosco pelo e-mail: integradoifspprojeto@gmail.com"
+>>>>>>> de490e146856c4edfa15caf5e3c6c2c46bddcd96
           }
           
     },
@@ -246,9 +259,13 @@ const resources = {
             "If you have any questions about our Privacy Policy, please contact us at the email: integradoifspprojeto@gmail.com":
                 "プライバシーポリシーに関する質問がある場合は、メール（integradoifspprojeto@gmail.com）でお問い合わせください。",
                 "Decline": "辞退",
+<<<<<<< HEAD
   "Accept": "受け入れる",
 
     "Login failed. Please check your credentials and try again." :  "Error de inicio de sesión. Por favor, verifica tus credenciales y vuelve a intentarlo."
+=======
+  "Accept": "受け入れる"
+>>>>>>> de490e146856c4edfa15caf5e3c6c2c46bddcd96
         }
     },
     
@@ -333,9 +350,13 @@ const resources = {
 
             "7. Contato": "7. Contacto",
             "Se você tiver dúvidas sobre nossa Política de Privacidade, entre em contato conosco pelo e-mail: integradoifspprojeto@gmail.com":
+<<<<<<< HEAD
                 "Si tienes preguntas sobre nuestra Política de Privacidad, contáctanos por correo electrónico a: integradoifspprojeto@gmail.com",
 
                  "Login failed. Please check your credentials and try again." :  "Error de inicio de sesión. Por favor, verifica tus credenciales y vuelve a intentarlo."
+=======
+                "Si tienes preguntas sobre nuestra Política de Privacidad, contáctanos por correo electrónico a: integradoifspprojeto@gmail.com"
+>>>>>>> de490e146856c4edfa15caf5e3c6c2c46bddcd96
         }
     },
     fr: {
@@ -421,9 +442,13 @@ const resources = {
                 "Si vous avez des questions concernant notre Politique de Confidentialité, contactez-nous par e-mail à : integradoifspprojeto@gmail.com",
 
                 "Decline": "Refuser",
+<<<<<<< HEAD
 "Accept": "Accepter",
 
    "Login failed. Please check your credentials and try again." :  "Échec de la connexion. Veuillez vérifier vos identifiants et réessayer."
+=======
+"Accept": "Accepter"
+>>>>>>> de490e146856c4edfa15caf5e3c6c2c46bddcd96
         }
     },
     de: {
@@ -484,6 +509,33 @@ const resources = {
             "1. Coleta de Dados": "1. Datenerhebung",
             "Coletamos informações pessoais quando você se registra na nossa plataforma, participa de torneios ou interage com nossos serviços. Isso pode incluir seu nome, endereço de e-mail, dados de pagamento e informações de uso da plataforma.":
                 "Wir erheben persönliche Informationen, wenn Sie sich auf unserer Plattform registrieren, an Turnieren teilnehmen oder mit unseren Diensten interagieren. Dies kann Ihren Namen, Ihre E-Mail-Adresse, Zahlungsdaten und Plattformnutzungsinformationen umfassen.",
+<<<<<<< HEAD
+=======
+
+            "2. Uso dos Dados": "2. Datennutzung",
+            "Utilizamos seus dados para melhorar sua experiência em nossa plataforma, enviar atualizações sobre torneios e ofertas relevantes, e fornecer suporte ao cliente. Também podemos usar seus dados para fins analíticos e de marketing.":
+                "Wir verwenden Ihre Daten, um Ihre Erfahrung auf unserer Plattform zu verbessern, Updates zu Turnieren und relevanten Angeboten zu senden und Kundensupport zu bieten. Wir können Ihre Daten auch für analytische und Marketingzwecke verwenden.",
+
+            "3. Compartilhamento de Dados": "3. Datenaustausch",
+            "Não compartilhamos seus dados pessoais com terceiros, exceto quando necessário para cumprir com a lei, ou com fornecedores de serviços que nos ajudam a operar nossa plataforma.":
+                "Wir teilen Ihre persönlichen Daten nicht mit Dritten, es sei denn, dies ist notwendig, um gesetzliche Anforderungen zu erfüllen oder mit Dienstleistern, die uns bei der Betrieb unserer Plattform unterstützen.",
+
+            "4. Segurança": "4. Sicherheit",
+            "Adotamos medidas de segurança para proteger seus dados pessoais contra acesso não autorizado, alteração ou destruição. No entanto, não podemos garantir segurança absoluta na transmissão de dados pela internet.":
+                "Wir treffen Sicherheitsmaßnahmen, um Ihre persönlichen Daten vor unbefugtem Zugriff, Veränderung oder Zerstörung zu schützen. Wir können jedoch keine absolute Sicherheit bei der Übertragung von Daten über das Internet garantieren.",
+
+            "5. Seus Direitos": "5. Ihre Rechte",
+            "Você tem o direito de acessar, corrigir ou excluir seus dados pessoais, bem como solicitar restrições sobre o processamento de seus dados. Para exercer seus direitos, entre em contato conosco através do nosso suporte.":
+                "Sie haben das Recht, auf Ihre persönlichen Daten zuzugreifen, sie zu korrigieren oder zu löschen sowie Einschränkungen der Verarbeitung Ihrer Daten zu beantragen. Um Ihre Rechte auszuüben, kontaktieren Sie uns über unseren Support.",
+
+            "6. Alterações na Política de Privacidade": "6. Änderungen der Datenschutzrichtlinie",
+            "A CommonLeague se reserva o direito de modificar esta Política de Privacidade a qualquer momento. As alterações serão publicadas nesta página com a data de revisão atualizada.":
+                "CommonLeague behält sich das Recht vor, diese Datenschutzrichtlinie jederzeit zu ändern. Änderungen werden auf dieser Seite mit dem aktualisierten Überarbeitungsdatum veröffentlicht.",
+
+            "7. Contato": "7. Kontakt",
+            "Se você tiver dúvidas sobre nossa Política de Privacidade, entre em contato conosco pelo e-mail: integradoifspprojeto@gmail.com":
+                "Wenn Sie Fragen zu unserer Datenschutzrichtlinie haben, kontaktieren Sie uns bitte per E-Mail unter: integradoifspprojeto@gmail.com",
+>>>>>>> de490e146856c4edfa15caf5e3c6c2c46bddcd96
 
             "2. Uso dos Dados": "2. Datennutzung",
             "Utilizamos seus dados para melhorar sua experiência em nossa plataforma, enviar atualizações sobre torneios e ofertas relevantes, e fornecer suporte ao cliente. Também podemos usar seus dados para fins analíticos e de marketing.":
@@ -591,9 +643,13 @@ const resources = {
 
             "7. Contato": "7. Контакт",
             "Se você tiver dúvidas sobre nossa Política de Privacidade, entre em contato conosco pelo e-mail: integradoifspprojeto@gmail.com":
+<<<<<<< HEAD
                 "Если у вас есть вопросы по нашей Политике конфиденциальности, свяжитесь с нами по электронной почте: integradoifspprojeto@gmail.com",
 
                  "Login failed. Please check your credentials and try again." :  "Ошибка входа. Пожалуйста, проверьте свои учетные данные и попробуйте снова."
+=======
+                "Если у вас есть вопросы по нашей Политике конфиденциальности, свяжитесь с нами по электронной почте: integradoifspprojeto@gmail.com"
+>>>>>>> de490e146856c4edfa15caf5e3c6c2c46bddcd96
         }
     },
     ko: {
@@ -676,9 +732,13 @@ const resources = {
 
             "7. Contato": "7. 연락처",
             "Se você tiver dúvidas sobre nossa Política de Privacidade, entre em contato conosco pelo e-mail: integradoifspprojeto@gmail.com":
+<<<<<<< HEAD
                 "개인정보 보호정책에 대한 질문이 있으시면 이메일로 연락해 주세요: integradoifspprojeto@gmail.com",
 
                    "Login failed. Please check your credentials and try again." :  "로그인 실패. 자격 증명을 확인하고 다시 시도하세요."
+=======
+                "개인정보 보호정책에 대한 질문이 있으시면 이메일로 연락해 주세요: integradoifspprojeto@gmail.com"
+>>>>>>> de490e146856c4edfa15caf5e3c6c2c46bddcd96
         }
     },
     zh: {
@@ -761,10 +821,14 @@ const resources = {
 
             "7. Contact": "7. 联系方式",
             "If you have any questions about our Privacy Policy, contact us at the email: integradoifspprojeto@gmail.com":
+<<<<<<< HEAD
                 "如果您对我们的隐私政策有任何疑问，请通过电子邮件与我们联系： integradoifspprojeto@gmail.com",
 
                    "Login failed. Please check your credentials and try again." :  "登录失败。请检查您的凭据并重试。"
 
+=======
+                "如果您对我们的隐私政策有任何疑问，请通过电子邮件与我们联系： integradoifspprojeto@gmail.com"
+>>>>>>> de490e146856c4edfa15caf5e3c6c2c46bddcd96
         }
     }
 };

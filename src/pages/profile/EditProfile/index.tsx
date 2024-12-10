@@ -5,7 +5,11 @@ import SideMenu from '../../../componentes/mainSideBar/SideMenu';
 import Header from '../../../componentes/MainHeader';
 import * as Components from './component';
 import { Formik, FormikHelpers, useFormik } from "formik";
+<<<<<<< HEAD
 import AuthService, { User } from "../../../service/AuthService";
+=======
+import AuthService, { User } from "../../../service/authService";
+>>>>>>> de490e146856c4edfa15caf5e3c6c2c46bddcd96
 import http from '../../../http';
 import axios from 'axios';
 import lolAccountService from "../../../service/lolAccountService";

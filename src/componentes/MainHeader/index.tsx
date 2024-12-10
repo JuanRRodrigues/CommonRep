@@ -20,6 +20,7 @@ import ChipsService from '../../service/ChipsService';
 import  InventoryService  from '../../service/inventoryService';
 import TransacitonService from '../../service/TransactionService';
 import InventoryIcon from '@mui/icons-material/Inventory';
+<<<<<<< HEAD
 import { NotificationImportant, GroupAdd } from '@mui/icons-material'; // Importação correta dos ícones
 
 // Modal customizado
@@ -114,6 +115,8 @@ const StyledButtonCustom = styled(Button)`
 `;
 
 
+=======
+>>>>>>> de490e146856c4edfa15caf5e3c6c2c46bddcd96
 
 
 const StyledBox = styled.div`
@@ -187,12 +190,15 @@ const StyledToggleButton = styled.button`
   }
 `;
 
+<<<<<<< HEAD
 
 
 
 
 
 
+=======
+>>>>>>> de490e146856c4edfa15caf5e3c6c2c46bddcd96
 interface Notification {
   relaredId: string;
   relatedName: string;
@@ -511,11 +517,18 @@ const handleWithdraw = async (values: SaleClientRequestDTO) => {
       try {
         const response = await inventoryService.getInventory(); // Chama a função consult() e aguarda a resposta
         console.log('Dados do Inventory:', response.data); // Exibe os dados no console
+<<<<<<< HEAD
       
         // Verifica se o array de dados não está vazio e pega o valor de qnt do primeiro item
         if (response.data && response.data.length > 0) {
           console.log(`saldo ${response.data[0].qnt}`);
           setSaldoFicha(response.data[0].qnt); // Atualiza o saldo com o valor de qnt do primeiro item
+=======
+
+        // Verifica se o array de dados não está vazio e pega o valor de qnt do primeiro item
+        if (response.data && response.data.length > 0) {
+          setSaldo(response.data[0].qnt); // Atualiza o saldo com o valor de qnt do primeiro item
+>>>>>>> de490e146856c4edfa15caf5e3c6c2c46bddcd96
         } else {
           console.error('Nenhum item encontrado no inventário.');
         }
@@ -799,6 +812,7 @@ const handleWithdraw = async (values: SaleClientRequestDTO) => {
         </div>
       </div>
 
+<<<<<<< HEAD
       <StyledModalCustom
       open={isNotificationsOpen}
       onClose={closeNotificationsModal}
@@ -849,6 +863,129 @@ const handleWithdraw = async (values: SaleClientRequestDTO) => {
         </div>
       </StyledBoxCustom>
     </StyledModalCustom>
+=======
+      <Modal
+      open={isMPOpen}
+      onClose={closeMPModal}
+      aria-labelledby="modal-title"
+      aria-describedby="modal-description"
+    >
+      <Box
+        sx={{
+          padding: 2,
+          width: 400,
+          bgcolor: 'background.paper',
+          borderRadius: 2,
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          flexDirection: 'column',
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+        }}
+      >
+        <Typography variant="h6">
+          {modalStep === 'addFunds' ? 'Adicionar Fichas' : 'Saque de Fichas'}
+        </Typography>
+
+        <Button
+          variant="outlined"
+          sx={{ marginTop: 2 }}
+          onClick={() => setModalStep(prev => (prev === 'addFunds' ? 'withdraw' : 'addFunds'))}
+        >
+          {modalStep === 'addFunds' ? 'Ir para Sacar' : 'Ir para Adicionar Fichas'}
+        </Button>
+
+        {modalStep === 'addFunds' ? (
+          <Formik
+            initialValues={{ qnt: '' }}
+            onSubmit={handleSearch}
+          >
+            {({ setFieldValue, values }) => (
+              <FormikForm>
+                <Box sx={{ marginTop: 2 }}>
+                  <Typography variant="body1">
+                    {saldo != null ? `Fichas disponíveis: ${saldo} Fichas` : 'Fichas não disponíveis'}
+                  </Typography>
+
+                  <Typography variant="body2" sx={{ marginTop: 1 }}>
+                    {values.qnt != null ? `Fichas a adicionar: ${values.qnt} Fichas` : ''}
+                  </Typography>
+
+                  <Box sx={{ display: 'flex', gap: 1, marginTop: 2 }}>
+                    <Button type="button" onClick={() => setFieldValue('qnt', 1)}>
+                      1 Ficha
+                    </Button>
+                    <Button type="button" onClick={() => setFieldValue('qnt', 2)}>
+                      2 Fichas
+                    </Button>
+                    <Button type="button" onClick={() => setFieldValue('qnt', 5)}>
+                      5 Fichas
+                    </Button>
+                    <Button type="button" onClick={() => setFieldValue('qnt', 10)}>
+                      10 Fichas
+                    </Button>
+                  </Box>
+                </Box>
+
+                <TextField
+                  type="number"
+                  id="qnt"
+                  name="qnt"
+                  placeholder="Digite a quantidade de fichas"
+                  fullWidth
+                  sx={{ marginTop: 2 }}
+                />
+                <ErrorMessage
+                  name="qnt"
+                  component="div"
+                  style={{ color: 'red', marginBottom: '10px' }}
+                />
+                <Button
+                  type="submit"
+                  variant="contained"
+                  disabled={isLoading}
+                  sx={{ marginTop: 2 }}
+                >
+                  {isLoading ? 'Carregando...' : 'Comprar'}
+                </Button>
+              </FormikForm>
+            )}
+          </Formik>
+        ) : modalStep === 'withdraw' ? (
+          <Box>
+            <Typography variant="body1">
+              Fichas atuais: {saldo !== null ? `${saldo} Fichas` : 'Carregando...'}
+            </Typography>
+            {saldo && saldo >= 50 ? (
+              <>
+                <Button variant="contained" onClick={handleWithdraw}>
+                  Sacar
+                </Button>
+                <Typography variant="body2">{saldo} Fichas</Typography>
+              </>
+            ) : (
+              <Typography variant="body2">Saldo insuficiente para saque (mínimo de 50 fichas).</Typography>
+            )}
+          </Box>
+        ) : (
+          <Box>
+            <Typography variant="body1">Saque realizado com sucesso!</Typography>
+            <Button variant="contained" onClick={() => setModalStep('addFunds')} sx={{ marginTop: 2 }}>
+              Fechar
+            </Button>
+          </Box>
+        )}
+
+        <Box sx={{ marginTop: 2 }}>
+          <Typography variant="body2">1 ficha = 5 reais</Typography>
+        </Box>
+      </Box>
+    </Modal>
+
+>>>>>>> de490e146856c4edfa15caf5e3c6c2c46bddcd96
 
     <Modal
       open={isMPOpen}
@@ -930,11 +1067,123 @@ const handleWithdraw = async (values: SaleClientRequestDTO) => {
                   variant="contained"
                   disabled={isLoading}
                   sx={{ marginTop: 2 }}
+<<<<<<< HEAD
+=======
                 >
                   {isLoading ? 'Carregando...' : 'Comprar'}
                 </Button>
               </FormikForm>
             )}
+          </Formik>
+        ) : modalStep === 'withdraw' ? (
+          <Formik
+            initialValues={{ qnt: 0, password: '', chipId: '67b84e5a-3d6a-4e69-9647-30ec76ae8143' }}
+            onSubmit={handleWithdraw}
+          >
+            {({ setFieldValue, values }) => (
+              <FormikForm>
+                <Box sx={{ marginTop: 2 }}>
+                  <Typography variant="body1">
+                    Fichas atuais: {saldo !== null ? `${saldo} Fichas` : 'Carregando...'}
+                  </Typography>
+
+                  {saldo && saldo >= 50 ? (
+                    <>
+                      {/* Insígnias Estilo Pokémon */}
+                      <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2, marginTop: 2 }}>
+                        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                          <FaCoins size={24} color="gold" />
+                          <Typography variant="body2">{saldo} Fichas</Typography>
+                        </Box>
+                      </Box>
+
+                      {/* Campo de quantidade para saque */}
+                      <TextField
+                        type="number"
+                        id="qnt"
+                        name="qnt"
+                        placeholder="Quantidade a sacar"
+                        fullWidth
+                        sx={{ marginTop: 2 }}
+                        onChange={e => setFieldValue('qnt', e.target.value)}
+                        value={values.qnt}
+                      />
+                      <TextField
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Digite sua senha"
+                        fullWidth
+                        sx={{ marginTop: 2 }}
+                        onChange={e => setFieldValue('password', e.target.value)}
+                        value={values.password}
+                      />
+                      <Button
+                        type="submit"
+                        variant="contained"
+                        disabled={isLoading}
+                        sx={{ marginTop: 2 }}
+                      >
+                        {isLoading ? 'Carregando...' : 'Sacar'}
+                      </Button>
+                    </>
+                  ) : (
+                    <Typography variant="body2">
+                      Saldo insuficiente para saque (mínimo de 50 fichas).
+                    </Typography>
+                  )}
+                </Box>
+              </FormikForm>
+            )}
+          </Formik>
+        ) : (
+          <Box>
+            <Typography variant="body1">Saque realizado com sucesso!</Typography>
+            <Button
+              variant="contained"
+              onClick={() => handleWithdraw}
+              sx={{ marginTop: 2 }}
+            >
+              Fechar
+            </Button>
+          </Box>
+        )}
+
+        <Box sx={{ marginTop: 2 }}>
+          <Typography variant="body2">1 ficha = 5 reais</Typography>
+        </Box>
+      </Box>
+    </Modal>
+
+    <Modal 
+  open={isNotificationsOpen}
+  onClose={closeNotificationsModal}
+  aria-labelledby="notifications-modal-title"
+  aria-describedby="notifications-modal-description"
+>
+  <StyledBox style={{ width: '300px' }}>
+    <Typography id="notifications-modal-title" variant="h6" component="h2">
+      {t('Notifications')}
+    </Typography>
+    <div id="notifications-modal-description" style={{ maxHeight: '200px', overflowY: 'auto', marginTop: '10px' }}>
+      {notifications.length > 0 ? (
+        notifications.map((notification, index) => (
+          <div key={index} style={{ marginBottom: '15px' }}>
+            <Typography variant="body2">{notification.type}</Typography>
+            {notification.type === 'TEAM_INVITE' && (
+              <div style={{ marginTop: '10px' }}>
+                <Button 
+                  variant="contained" 
+                  color="primary" 
+                  onClick={() => handleAccept(index)}
+                  style={{ marginRight: '10px' }}
+>>>>>>> de490e146856c4edfa15caf5e3c6c2c46bddcd96
+                >
+                  {isLoading ? 'Carregando...' : 'Comprar'}
+                </Button>
+              </FormikForm>
+            )}
+<<<<<<< HEAD
           </Formik>
         ) : modalStep === 'withdraw' ? (
           <Formik
@@ -1017,6 +1266,16 @@ const handleWithdraw = async (values: SaleClientRequestDTO) => {
     </Modal>
 
   
+=======
+          </div>
+        ))
+      ) : (
+        <Typography variant="body2">{t('No notifications...')}</Typography>
+      )}
+    </div>
+  </StyledBox>
+</Modal>
+>>>>>>> de490e146856c4edfa15caf5e3c6c2c46bddcd96
 
 
 <Dialog open={inventoryModalOpen} onClose={closeInventoryModal} fullWidth>
@@ -1033,7 +1292,11 @@ const handleWithdraw = async (values: SaleClientRequestDTO) => {
               <Box sx={{ padding: 2 }}>
                 {/* Seção da Carteira de Fichas */}
                 <h3>Quantidade de Fichas</h3>
+<<<<<<< HEAD
                 <p>Você tem {saldoFicha} fichas em sua carteira.</p>
+=======
+                <p>Você tem {saldo} fichas em sua carteira.</p>
+>>>>>>> de490e146856c4edfa15caf5e3c6c2c46bddcd96
               </Box>
             )}
             {selectedTab === 1 && (
